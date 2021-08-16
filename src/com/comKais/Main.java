@@ -1,5 +1,4 @@
 package com.comKais;
-
 public class Main {
 //refactoring video 4 is important for safe refactoring
     public static void main(String[] args) {

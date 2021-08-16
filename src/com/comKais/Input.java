@@ -1,10 +1,7 @@
 package com.comKais;
-
-
 import java.util.Scanner;
-
 public class Input {
-    Scanner scanner = new Scanner(System.in);
+   private final Scanner scanner = new Scanner(System.in);
     public double readInput(String prompt, double min, double max) {
         double value;
         while (true) {

@@ -1,5 +1,4 @@
 package com.comKais;
-
 public class CalculateMortgage {
     private final double MONTHS_IN_YEAR = 12;
     private double principal;
@@ -8,22 +7,25 @@ public class CalculateMortgage {
     private double monthlyInterest;
     private double numberOfPayments;
     private short month;
-    Output out=new Output();
+    private final Output out = new Output();
 
+    //Main which take values from input
     public CalculateMortgage(double principal, double annualInterestYear, int year) {
         setPrincipal(principal);
         setYear(year);
         setAnnualInterestYear(annualInterestYear);
         System.out.println("MORTGAGE");
         System.out.println("--------");
-        Mortgage();
+        Mortgage();//Mortgage
         System.out.println();
         System.out.println("PAYMENT SCHEDULE");
         System.out.println("----------------");
         for (month = 1; month <= year * MONTHS_IN_YEAR; month++) {
-            Balance();
+            Balance();//balance
         }
     }
+
+    //Setters
     private void setPrincipal(double principal) {
         this.principal = principal;
     }
@@ -36,12 +38,14 @@ public class CalculateMortgage {
         this.year = year;
     }
 
+    //calculate similar values for Mortgage and balance
     private void calculateSimilar() {
         double PERCENT = 100;
         this.monthlyInterest = this.annualInterestYear / PERCENT / this.MONTHS_IN_YEAR;
         this.numberOfPayments = (double) this.year * this.MONTHS_IN_YEAR;
     }
 
+    //Mortgage
     private void Mortgage() {
         calculateSimilar();
         double mortgage = principal
@@ -51,6 +55,7 @@ public class CalculateMortgage {
 
     }
 
+    //balance
     private void Balance() {
         calculateSimilar();
         double balance = principal
